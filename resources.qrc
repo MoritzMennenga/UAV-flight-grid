@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/plugins/npg" >
+    <qresource prefix="/plugins/UAV-flight-grid/img" >
         <file>icon.png</file>
     </qresource>
 </RCC>

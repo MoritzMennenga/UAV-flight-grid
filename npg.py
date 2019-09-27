@@ -60,7 +60,7 @@ class NPGflightMode:
         locale_path = os.path.join(
             self.plugin_dir,
             'i18n',
-            'NPGflightMode_{}.qm'.format(locale))
+            'UAV_{}.qm'.format(locale))
 
         if os.path.exists(locale_path):
             self.translator = QTranslator()
@@ -69,7 +69,7 @@ class NPGflightMode:
 
         # Declare instance attributes
         self.actions = []
-        self.menu = self.tr(u'&NPG fliht mode')
+        self.menu = self.tr(u'&UAV-flight-grid')
 
         # Check if plugin was started the first time in current QGIS session
         # Must be set in initGui() to survive plugin reloads
@@ -88,7 +88,7 @@ class NPGflightMode:
         :rtype: QString
         """
         # noinspection PyTypeChecker,PyArgumentList,PyCallByClass
-        return QCoreApplication.translate('NPGflightMode', message)
+        return QCoreApplication.translate('UAV-flight-grid', message)
 
     def add_action(
             self,
@@ -167,10 +167,10 @@ class NPGflightMode:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/npg/icon.png'
+        icon_path = ':/plugins/UAV-flight-grid/img/icon.png'
         self.add_action(
             icon_path,
-            text=self.tr(u'NPG flight'),
+            text=self.tr(u'UAV-flight-grid'),
             callback=self.run,
             parent=self.iface.mainWindow())
 
@@ -181,7 +181,7 @@ class NPGflightMode:
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
             self.iface.removePluginVectorMenu(
-                self.tr(u'&NPG flight mode'),
+                self.tr(u'&UAV-flight-grid'),
                 action)
             self.iface.removeToolBarIcon(action)
 
