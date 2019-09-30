@@ -38,7 +38,7 @@ from .npg_dialog import NPGflightModeDialog
 
 
 # Initialize Qt resources from file resources.py
-
+from .resources import *
 
 class NPGflightMode:
     """QGIS Plugin Implementation."""
@@ -167,7 +167,7 @@ class NPGflightMode:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/UAV-flight-grid/img/icon.png'
+        icon_path = ':/UAV-flight-grid/img/icon.png'
         self.add_action(
             icon_path,
             text=self.tr(u'UAV-flight-grid'),
